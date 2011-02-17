@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+
+		<link rel="stylesheet" href="style/main.css" type="text/css">
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/ui-darkness/jquery-ui.css" type="text/css">
+
+		<script src="script/app_loader.js"></script>
+		<script type="text/javascript">
+			var opts = {};
+			if (document.location.pathname.indexOf("_design") == -1) {
+				opts.db = "{{ sea_db }}";
+				opts.design = "{{ sea_design }}";
+			}
+			opts.ddoc = {{{ddoc}}};
+			$.couch.app(function(app) {
+				app.base_lng = {{ lng }};
+				app.base_lat = {{ lat }};
+
+				$('#list').evently('features', app);
+				$('#map_canvas').evently('map', app);
+			}, opts);
+		</script>
+	</head>
+	<body>
+		<div id="map_canvas"></div>
+		<div id="list"></div>
+	</body>
+</html>

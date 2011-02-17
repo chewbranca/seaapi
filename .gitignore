@@ -1,0 +1,7 @@
+.couchapprc
+seaapi.json
+.DS_Store
+*.log
+*.bak
+.*.swp
+.*.swo

@@ -1,0 +1,10 @@
+{
+	"title" : "seaapi.com -- Your Seattle Geo API",
+	"lng" : -122.3320708,
+	"lat" : 47.6062095,
+	"sea_db"     : "seaapi",
+	"sea_design" : "seaapi",
+	"apiKeys" : {
+		"googleAnalytics" : "aaaa1111"
+	}
+}

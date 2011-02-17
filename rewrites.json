@@ -1,0 +1,22 @@
+[
+  {
+    "from" : "",
+    "to" : "_show/index"
+  },
+  {
+    "from" : "script/*",
+    "to" : "script/*"
+  },
+  {
+    "from" : "style/*",
+    "to" : "style/*"
+  },
+  {
+    "from" : "vendor/*",
+    "to" : "vendor/*"
+  },
+  {
+    "from" : "seaapi/*",
+    "to" : "../../*"
+  }
+]

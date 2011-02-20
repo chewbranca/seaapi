@@ -26,5 +26,32 @@
 	<body>
 		<div id="map_canvas"></div>
 		<div id="list"></div>
+		<div id="overlay">
+			<div>
+				<h2>Add something new!</h2>
+				<form id="new-item">
+					<input type="hidden" name="lat" />
+					<input type="hidden" name="lng" />
+					<p>
+						<label for="name">Name:</label>
+						<input type="text" name="name" />
+					</p>
+					<p>
+						<label for="description">Description:</label>
+						<input type="text" name="description" />
+					</p>
+					<p>
+						<label for="url">Related URL:</label>
+						<input type="text" name="url" />
+					</p>
+					<p>
+						<input type="submit" value="Save" />
+					</p>
+				</form>
+				<p>
+					<button class="close">Close</button>
+				</p>
+			</div>
+		</div>
 	</body>
 </html>

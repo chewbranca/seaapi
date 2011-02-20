@@ -17,5 +17,7 @@ couchapp_load([
   "vendor/couchapp/jquery.evently.js",
   "vendor/couchapp/jquery.spatial.js",
   "http://maps.google.com/maps/api/js?sensor=false",
-  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"
+  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js",
+  "http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js",
+  "script/jquery_extensions.js"
 ]);

@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'socrata'
+require 'couchrest'
+
+
+@socrata = Socrata.new :base_uri => "http://data.seattle.gov/api/"
+@view_name = "55n4-ddnu"
+@view = @socrata.view(@view_name)
+@rows = @view.rows
+@couchdb = CouchRest.database!("http://127.0.0.1:5985/seaapi")
+
+def convert_row row
+	{
+		:datatype => "Socrata - Downtown-Seattle-Bike-Racks",
+		:dataset => "socrata:55n4-ddnu",
+		:feature => "Bike Rack",
+		:geometry => {
+			:coordinates => [
+				row["LONGITUDE"].to_f,
+				row["LATITUDE"].to_f
+			],
+			:type => "Point"
+		},
+		:capacity => row["RACK_CAPAC"],
+		:description => row["UNITDESC"],
+		:latitude => row["LATITUDE"],
+		:longitude => row["LONGITUDE"],
+		:foreign_db_id => row["id"],
+		:foreign_db_object_id => row["OBJECTID"]
+	}
+end
+
+@rows.each do |raw_row|
+	row = convert_row raw_row
+	response = @couchdb.save_doc(row)
+	puts response.inspect
+end

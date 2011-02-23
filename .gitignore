@@ -1,5 +1,5 @@
 .couchapprc
-seaapi.json
+*seaapi.json
 .DS_Store
 *.log
 *.bak

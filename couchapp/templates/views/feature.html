@@ -1,0 +1,10 @@
+<div style="width: auto; height: auto;" data-id="<%= point.id %>" class="point">
+<h1><%= point.get('name') %></h1>
+<% if (point.get('website')) { %>
+	<p><a target="_external" href="<%= point.get('website') %>"><%= point.get('website') %></a></p>
+<% } %>
+<p>Lng: <%= point.get('longitude') %> -- Lat: <%= point.get('latitude') %></p>
+<% if (point.get('address')) { %>
+	<p><%= point.get('address') %></p>
+<% } %>
+</div>

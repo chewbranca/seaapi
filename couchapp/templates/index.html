@@ -18,14 +18,14 @@
 				app.base_lng = {{ lng }};
 				app.base_lat = {{ lat }};
 
-				$('#list').evently('features', app);
-				$('#map_canvas').evently('map', app);
+				window.Map = window.SeaAPI.MapApp = new window.SeaAPI.MapView({couchApp : app });
+				window.Map.render();
 			}, opts);
 		</script>
 	</head>
 	<body>
-		<div id="map_canvas"></div>
-		<div id="list"></div>
+		<div id="map-canvas"></div>
+		<div id="feature-list"></div>
 		<div id="overlay">
 			<div>
 				<h2>Add something new!</h2>
@@ -53,5 +53,6 @@
 				</p>
 			</div>
 		</div>
+		
 	</body>
 </html>

@@ -1,0 +1,5 @@
+<ul>
+	<% _.each(features, function(feature) { %>
+		<li data-id="<%= feature.cid %>" feature-id="<%= feature.featureName %>" class="feature ui-state-default ui-corner-all"><%= feature.get('feature') %> (<%= feature.get('count') %>)</li>
+	<% }); %>
+</ul>
